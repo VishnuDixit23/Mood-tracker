@@ -6,7 +6,7 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { useState } from "react";
+
 
 type DataTableProps<TData, TValue> = {
   columns: ColumnDef<TData, TValue>[];

@@ -55,7 +55,7 @@ export default function MoodPage() {
           Hello, {employeeMap[id] || `Employee #${id}`}
         </h1>
         <p className="text-muted-foreground text-center mb-6">
-          Use the slider below to tell us how you're feeling today.
+          Use the slider below to tell us how you&apos;re feeling today.
         </p>
 
         <div className="w-full">

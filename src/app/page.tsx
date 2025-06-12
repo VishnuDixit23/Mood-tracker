@@ -49,7 +49,7 @@ export default function HomePage() {
           Employee Mood Tracker
         </h1>
         <p className="mt-4 text-muted-foreground text-base sm:text-lg">
-          Click on your profile to record how you're feeling today. It only takes a second.
+         Click on your profile to record how you&apos;re feeling today.
         </p>
       </div>
 

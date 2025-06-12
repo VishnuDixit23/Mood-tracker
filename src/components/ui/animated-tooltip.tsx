@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useTransform,
@@ -33,10 +34,11 @@ export const AnimatedTooltip = ({
     springConfig,
   );
 
-  const handleMouseMove = (event: any) => {
-    const halfWidth = event.target.offsetWidth / 2;
-    x.set(event.nativeEvent.offsetX - halfWidth);
-  };
+ const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
+  const target = event.currentTarget; // ✅ This is a typed HTMLImageElement
+  const halfWidth = target.offsetWidth / 2;
+  x.set(event.nativeEvent.offsetX - halfWidth);
+};
 
   const router = useRouter(); 
 
@@ -85,14 +87,14 @@ export const AnimatedTooltip = ({
               </motion.div>
             )}
           </AnimatePresence>
-          <img
-            onMouseMove={handleMouseMove}
-            height={100}
-            width={100}
-            src={item.image}
-            alt={item.name}
-            className="relative !m-0 h-14 w-14 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
-          />
+          <Image
+  onMouseMove={handleMouseMove}
+  src={item.image}
+  alt={item.name}
+  width={56} // same as w-14
+  height={56} // same as h-14
+  className="relative !m-0 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105"
+/>
         </div>
       ))}
     </>
